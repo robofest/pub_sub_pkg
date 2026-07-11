@@ -12,7 +12,7 @@ class StringPublisher(Node):
         self.publisher_ = self.create_publisher(String, 'topic1', 10)
         
         # Timer to trigger the callback every 2.0 seconds (every other second)
-        timer_period = 2.0  
+        timer_period = 2.0
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.get_logger().info('Jazzy Publisher node started. Publishing every 2 seconds.')
 

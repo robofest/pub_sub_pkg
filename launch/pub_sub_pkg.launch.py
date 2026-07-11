@@ -1,23 +1,18 @@
 from launch import LaunchDescription
-from launch.actions import ExecuteProcess
+from launch_ros.actions import Node
 
 def generate_launch_description():
     return LaunchDescription([
-        # Launch Publisher in a separate xterm window
-        ExecuteProcess(
-            cmd=[
-                'xterm', '-e', 
-                'ros2', 'run', 'pub_sub_pkg', 'pub_node'
-            ],
+        Node(
+            package='pub_sub_pkg',
+            executable='pub_node',
+            name='publisher_node',
             output='screen'
         ),
-        
-        # Launch Subscriber in another separate xterm window
-        ExecuteProcess(
-            cmd=[
-                'xterm', '-e', 
-                'ros2', 'run', 'pub_sub_pkg', 'sub_node'
-            ],
+        Node(
+            package='pub_sub_pkg',
+            executable='sub_node',
+            name='subscriber_node',
             output='screen'
         )
     ])
