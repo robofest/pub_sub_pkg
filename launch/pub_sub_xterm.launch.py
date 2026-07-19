@@ -10,7 +10,7 @@ def generate_launch_description():
             cmd=[
                 'xterm', 
                 '-title', 'Publisher Node',  # <-- Adds the custom title
-                '-e', 'ros2', 'run', 'pub_sub_pkg', 'pub_node'
+                '-e', 'ros2', 'run', 'pub_sub_pkg', 'pub_node_exe'
             ],
             output='screen'
         ),
@@ -20,7 +20,7 @@ def generate_launch_description():
             cmd=[
                 'xterm', 
                 '-title', 'Subscriber Node', # <-- Adds the custom title
-                '-e', 'ros2', 'run', 'pub_sub_pkg', 'sub_node'
+                '-e', 'ros2', 'run', 'pub_sub_pkg', 'sub_node_exe'
             ],
             output='screen'
         )

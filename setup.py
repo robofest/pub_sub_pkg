@@ -28,8 +28,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-	    'pub_node = pub_sub_pkg.pub_node:main',
-        'sub_node = pub_sub_pkg.sub_node:main',
+	        'pub_node_exe = pub_sub_pkg.pub_node:main',
+            'sub_node_exe = pub_sub_pkg.sub_node:main',
         ],
     },
 )
