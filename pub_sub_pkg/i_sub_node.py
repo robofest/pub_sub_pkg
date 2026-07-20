@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String
+from std_msgs.msg import Int32
 
 
 class StringSubscriber(Node):
@@ -14,16 +14,15 @@ class StringSubscriber(Node):
         
         # Create a subscription to 'topic1'
         self.subscription = self.create_subscription(
-            String,
-            'topic1',
+            Int32,
+            'i_topic',
             self.listener_callback,
             10
         )
         self.get_logger().info('Jazzy Subscriber node started. Listening...')
 
     def listener_callback(self, msg):
-        self.counter += 1
-        self.get_logger().info(f'Received: {msg.data} | Counter: {self.counter}')
+        self.get_logger().info(f'Received: {msg.data}')
 
 def main(args=None):
     rclpy.init(args=args)

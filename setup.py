@@ -1,5 +1,6 @@
 import os
 from glob import glob
+
 from setuptools import find_packages, setup
 
 package_name = 'pub_sub_pkg'
@@ -28,8 +29,10 @@ setup(
     },
     entry_points={
         'console_scripts': [
-	        'pub_node_exe = pub_sub_pkg.pub_node:main',
+            'pub_node_exe = pub_sub_pkg.pub_node:main',
             'sub_node_exe = pub_sub_pkg.sub_node:main',
+            'i_pub_node_exe = pub_sub_pkg.i_pub_node:main',
+            'i_sub_node_exe = pub_sub_pkg.i_sub_node:main',
         ],
     },
 )
