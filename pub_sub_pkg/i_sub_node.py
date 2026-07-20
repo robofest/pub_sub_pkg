@@ -4,29 +4,26 @@ from rclpy.node import Node
 from std_msgs.msg import Int32
 
 
-class StringSubscriber(Node):
+class IntSubscriber(Node):
     def __init__(self):
         # Initialize the node with the name 'sub_node'
-        super().__init__('sub_node')
+        super().__init__('i_sub_node')
         
-        # Counter to keep track of received messages
-        self.counter = 0
-        
-        # Create a subscription to 'topic1'
+        # Create a subscription to 'i_topic'
         self.subscription = self.create_subscription(
             Int32,
-            'i_topic',
+                    ,   # <==== Complete this line
             self.listener_callback,
             10
         )
         self.get_logger().info('Jazzy Subscriber node started. Listening...')
 
-    def listener_callback(self, msg):
+    def                     (self, msg): # <===== Complete this line
         self.get_logger().info(f'Received: {msg.data}')
 
 def main(args=None):
     rclpy.init(args=args)
-    node = StringSubscriber()
+    node = IntSubscriber()
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
