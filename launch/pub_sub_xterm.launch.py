@@ -8,7 +8,10 @@ def generate_launch_description():
         # Launch Publisher with a custom xterm title
         ExecuteProcess(
             cmd=[
-                'xterm', 
+                'xterm',
+                '-fa', 'Monospace',      # Sets the font family
+                '-fs', '12',             # Sets the font size (increase this as needed)
+                '-geometry', '80x20',   # Sets the window size (columns x rows)
                 '-title', 'Publisher Node',  # <-- Adds the custom title
                 '-e', 'ros2', 'run', 'pub_sub_pkg', 'pub_node_exe'
             ],
@@ -19,6 +22,9 @@ def generate_launch_description():
         ExecuteProcess(
             cmd=[
                 'xterm', 
+                '-fa', 'Monospace',      # Sets the font family
+                '-fs', '12',             # Sets the font size (increase this as needed)
+                '-geometry', '80x20',   # Sets the window size (columns x rows)
                 '-title', 'Subscriber Node', # <-- Adds the custom title
                 '-e', 'ros2', 'run', 'pub_sub_pkg', 'sub_node_exe'
             ],
