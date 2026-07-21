@@ -12,13 +12,13 @@ class IntSubscriber(Node):
         # Create a subscription to 'i_topic'
         self.subscription = self.create_subscription(
             Int32,
-                    ,   # <==== Complete this line
+            'i_topic'        ,   # <==== Complete this line
             self.listener_callback,
             10
         )
         self.get_logger().info('Jazzy Subscriber node started. Listening...')
 
-    def                     (self, msg): # <===== Complete this line
+    def listener_callback(self, msg): # <===== Complete this line
         self.get_logger().info(f'Received: {msg.data}')
 
 def main(args=None):

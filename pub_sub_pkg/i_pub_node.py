@@ -24,7 +24,7 @@ class IntPublisher(Node):
         msg = Int32()
         self.i += 1
         msg.data = self.i
-        self.publisher.publish(msg)
+        self.publisher_.publish(msg)
         self.get_logger().info(f'Publishing: {msg.data}')
 
 def main(args=None):

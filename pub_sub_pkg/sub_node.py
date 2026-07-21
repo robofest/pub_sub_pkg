@@ -22,7 +22,7 @@ class StringSubscriber(Node):
         self.get_logger().info('Jazzy Subscriber node started. Listening...')
 
     def listener_callback(self, msg):
-        self.counter += 1
+        self.counter += 2
         self.get_logger().info(f'Received: {msg.data} | Counter: {self.counter}')
 
 def main(args=None):

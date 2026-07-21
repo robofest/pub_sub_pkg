@@ -3,6 +3,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
 
+
 class StringPublisher(Node):
     def __init__(self):
         # Initialize the node with the name 'pub_node'
@@ -20,7 +21,7 @@ class StringPublisher(Node):
         msg = String()
         msg.data = 'Hello from ROS 2 Jazzy!'
         self.publisher_.publish(msg)
-        self.get_logger().info(f'Publishing: {msg.data}')
+        self.get_logger().info(f'Publishing: {msg.data} by CJ')
 
 def main(args=None):
     rclpy.init(args=args)
